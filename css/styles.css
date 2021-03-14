@@ -1,0 +1,419 @@
+/*¨IMPORTANDO FUENTES*/
+
+@font-face{
+    font-family : "nevis";
+    src: url("fonts/nevis.eot");
+    src: url("fonts/nevis.eot?#iefix") format('embedded-opentype'),
+    url("fonts/nevis.woff") format('woff'),
+    url("fonts/nevis.ttf") format('truetype'),
+    url("fonts/nevis.svg") format('svg');
+    font-weight:normal;
+    font-style:normal; 
+}
+
+@font-face{
+    font-family : "fajala";
+    src: url("fonts/FjallaOne-Regular.ttf") format('truetype');
+    font-weight:normal;
+    font-style:normal; 
+}
+
+/* fuentes de iconos noticias*/
+@font-face{
+    font-family : "icons";
+    src: url("fonts/websymbols-regular-webfont.svg#WebSymbolsRegular") format('svg',),
+    url("fonts/websymbols-regular-webfont.eot");
+    src: url("fonts/websymbols-regular-webfont.eot?#iefix") format('embedded-opentype'),
+    url("fonts/websymbols-regular-webfont.woff") format('woff'),
+    url("fonts/websymbols-regular-webfont.ttf") format('truetype');
+    font-weight:normal;
+    font-style:normal; 
+}
+
+/*ESTILOS GENERALES*/
+*{
+    padding: 0px;
+    margin: 0px;
+
+}
+body {
+    background-image: url("../img/paven.png");
+}
+
+/* estilos */
+a{
+    color:red;
+    text-decoration:none;   
+}
+
+a:hover{
+    color:rgb(168, 0, 0);
+    text-decoration:none;   
+}
+
+/* important para que cambie el color que tenia anteriormente*/
+.azul {
+    color:blue !important;
+}
+
+.orange {
+    color:#d69d2a !important;
+}
+
+/*color de texto noticias*/
+.blue {
+    color:blue;
+}
+
+/*Iconos de noticias fuentes de iconos agregadas arriba*/
+
+.icon {
+    font-family: "icons";
+    float: left;
+    margin-right: 5px;
+    margin-top: -2px;
+}
+
+/* LIMPIAR FLOTADOS CON CLEAR FIX*/
+.clearfix {
+    float: none; 
+    clear: both;
+}
+
+/* formularios*/
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select{
+    border: 1px solid #c9c9c9;
+    box-shadow: 0px 0px 2px #ccc inset;
+    background: white;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color: gray;
+    transition: all 300ms;
+}
+
+/* estilos a las cajas de texto */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select{
+    border: 1px solid red;
+    color: black;
+}
+
+/*estilos a los botones */
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+select{
+    display: block;
+    border-radius: 2px;
+    border: 1px solid rgb(255, 0, 0);
+    width : 60px;
+    padding : 2px;
+    color: white;
+    background-color : rgb(255, 49, 49);
+    cursor : pointer;
+}
+
+/* ILUMINA LOS BOTONES MIENTRAS PASAS POR ENCIMA CON EL MOUSE*/
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover{
+   box-shadow: 0px 0px 2px gray;
+}
+
+/* cabecera */
+#header {
+    min-width: 1024px;
+    width: 100%;
+    height: 250px;
+    margin: auto;
+    
+}
+#header a {
+    text-decoration: none;
+}
+#header #logotipo {
+    width: 770px;
+    margin: auto;
+    padding-top: 20px;
+}
+#header #logotipo img {
+    padding: 10px;
+    display: block;
+    text-align: center;
+    margin: 0px auto;
+    width: 140px;
+}
+#header h1 {
+    text-align: center;
+    font-size: 40px;
+    font-family: nevis;
+    text-transform: uppercase;
+    letter-spacing:4px ;
+    text-shadow: 0px 2px 1px #333333;
+    transition: all 300ms;
+}
+
+#header h1:hover {
+    text-shadow: 0px 2px 1px #333333 , 0px 0px 4px red;
+}
+
+#header h2 {
+    text-align: center;
+    font-size: 20px;
+    font-family: nevis; 
+}
+
+#header a {
+    color: red;
+}
+
+/* BARRA DE NAVEGACION*/
+
+#nav {
+    width: 100%;
+    height: 40px;
+    background-color: #333333;
+    color: white;
+    font-family :sans-serif, helvetica, Arial;
+    font-size : 14px;
+    box-shadow: 0px 0px 2px gray; 
+}
+#nav ul {
+    list-style: none;
+    text-decoration: none;
+    margin : 0px auto;
+    width : 1130px;  /* ajuste del tamaño del menu*/ 
+}
+#nav > ul > li { /*ajuste uno al lado del otro*/
+    line-height: 40px;
+    float :left;
+    border-right: 1px solid gray;
+    transition: all 300ms;
+}
+
+#nav > ul > li a {
+    display: block;
+    padding-left : 20px;
+    padding-right: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+#nav > ul > li > a:first-child {
+    border-left: 1px solid gray;
+}
+#nav > ul > li:hover {
+    background-color : rgb(184, 23, 23);
+    box-shadow: 0px 0px 4px red inset;
+}
+
+/* MENU DESPLEGABLE*/
+
+#nav > ul > li > ul { /*estilo de caja desplegable*/
+    display: none;
+    position: absolute;
+    width: 160px;
+    box-shadow: 0px 1px 1px gray;  /* borde de la caja   */
+    /* z-index: 1; */ 
+}
+    
+    
+#nav > ul > li:hover > ul { /* esto muestra los menu desplegables*/
+    display: block;
+}
+
+#nav > ul > li:hover > ul > li {
+    background-color: #F2F1F0;
+    border-bottom: 1px solid #D6D6D6;
+    padding: 8px;
+    line-height: 25px;
+    font-size: 13px;
+}
+
+#nav > ul > li:hover > ul > li > a{
+    color: #666666;
+}
+#nav > ul > li:hover > ul > li:hover{
+    box-shadow: 0px 0px 6px #ccc inset;
+    
+}
+/* contenido lateral*/
+
+#content {
+
+    width: 1250px;
+    min-height: 1100px;
+    margin: 0px auto;
+    font-family: sans-serif,Arial, Helvetica;
+}
+
+/* barra lateral */
+
+#aside , #frase{
+    /*clear: both;*/
+    width: 200px;
+    float : left;
+    margin: 30px;
+    background-color : white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 2px #ccc;
+    font-family: sans-serif,  Arial, Helvetica ;
+}
+
+#frase {
+    width:180px;
+    padding: 10px;
+    font-size:14px;
+    font-family: sans-serif;
+}
+
+#aside .widget {
+    display: block;
+    width: 180px;
+    margin: 5px auto;
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;  
+    font-size: 14px;
+    border-bottom: 1px dashed #333333;
+}
+
+#aside .widget:last-child{
+    margin-bottom: 20px;
+    
+}
+
+#aside .widget:last-child{
+    margin-bottom: 20px;
+}
+
+#aside h3 {
+    display: block;
+    width: 100%;
+    color: #333333 ; 
+    text-align: center; 
+    margin-bottom: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: rgb(230, 230, 230);
+    border-bottom: 1px solid rgb(172, 170, 170);
+    border-left: none;
+    border-right: none;
+}
+
+#aside li {
+    margin-top: 8px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    
+
+}
+/* formularios barra lateral */
+
+#aside div label,
+#aside div input[type="text"],
+#aside div input[type="email"],
+#aside div input[type="password"],
+#aside div a {
+    display: block;
+    width: 95%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+} 
+
+#aside div input[type="button"],
+#aside div input[type="submit"],
+#aside div button {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#aside input,
+#aside label {
+    margin: 0px auto;
+    text-align: center;
+}
+
+/* CONTENIDO CENTRAL */
+
+#sections {
+    float: right;
+    width: 75%; /* tamaño del las secciones de noticias*/
+    font-family: sans-serif, Arial, Helvetica;
+    margin-right: 20px;
+}
+
+#sections .titulo {
+    font-family: fajala;
+    font-size : 25px; 
+    font-weight: normal; 
+    letter-spacing: 1px;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+    margin-top: -20px;
+    padding-top: 20px;
+    padding-bottom: 10px
+}
+
+#sections section {
+    margin-top: 40px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 4px #c9c9c9;
+    color : #333333; 
+    font-size: 16px;
+    overflow: hidden;
+}
+
+#sections .article {
+    margin: 10px;
+    margin-top : 10px;
+    margin-bottom: 10px;
+
+}
+
+#sections .date {
+    color: gray;
+    font-size:14px;
+
+}
+
+#sections .stikerOne, 
+#sections .stikerTwo{
+    position: absolute;
+    margin-top : -40px; /* ubicacion de las pegatinas superior izquierda de noticias*/
+    z-index: 0;
+}
+#sections .stikerTwo {
+    margin-left: 45%; /* ubicacion de las pegatinas superior derecha de noticias*/
+}
+
+#history {
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;  
+}
+
+/*PIE DE PAGINA*/
+
+#footer{
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+    margin-top: 40px;
+    background-color: #333333;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color:white;
+    font-family:sans-serif;
+    font-size:14px;
+    box-shadow: 0px 0px 2px gray;
+}
